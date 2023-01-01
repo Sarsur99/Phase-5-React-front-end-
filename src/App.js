@@ -1,23 +1,45 @@
+import React, { useState } from 'react';
+import Login from './Login';
 import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Home from './About';
+import Page from './components/Restaurant/Page';
+import Restaurants from './components/Restaurants/Restaurants';
+import Restaurant from './components/Restaurants/Restaurant';
+import Navbar from './Navbar';
+import About from './About';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+    localStorage.setItem('isLoggedIn', true);
+  };
+
+  if (!isLoggedIn && localStorage.getItem('isLoggedIn')) {
+    setIsLoggedIn(true);
+  }
+
+  const WithNavbar = (props) => {
+    return (
+      <>
+        { isLoggedIn && <Navbar /> }
+        <Routes>
+          <Route exact path="/" element={<Login onLogin={handleLogin}/>}/>
+          {/* <Route path="/welcome" element={<Home isLoggedIn={isLoggedIn}/>}/> */}
+          <Route path="/restaurants" element={<Restaurants/>} />
+          <Route path="/restaurants/:slug" element={<Restaurant/>} />
+          <Route path="/about" element={<About/>} />
+        </Routes>
+      </>
+    );
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <WithNavbar isLoggedIn={isLoggedIn} />
     </div>
   );
 }
