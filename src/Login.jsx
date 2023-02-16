@@ -34,51 +34,63 @@ const Login = (props) => {
             },
             body: JSON.stringify(user)
         })
-        .then(r =>{
+        .then(r => {
             if(r.ok) {
-                r.json()
-                .then(data=> window.sessionStorage.setItem("user_id", data.id))
-                .then(() => {
-                    props.onLogin();
-                    navigate("/restaurants");
-                })
+                return r.json()
             }
             else{
-                setErrors("invalid username or password")
+                throw new Error("invalid username or password")
             }
-        }
-
-        )
-
+        })
+        .then(data=> window.sessionStorage.setItem("user_id", data.id))
+        .then(() => {
+            props.onLogin();
+            navigate("/restaurants");
+        })
+        .catch(err => setErrors(err.message))
     };
 
 
     return (
-        <form className="flex flex-col items-center bg-gray-400 h-screen" onSubmit={handleSubmit}>
-            <h1 className="text-4xl font-bold text-red-600">Fast Foodies</h1>
-            <p className="text-2xl font-bold">Fast food reviews by you!</p>
-            <div className="flex flex-col mt-8">
-                <label className="text-lg font-semibold text-white">Username:</label>
-                <input
-                    className="w-1/2 p-2 rounded-lg border-red-500 border-2 bg-white"
-                    type="text"
-                    name="name"
-                    value={login.name}
-                    onChange={handleOnChange}
-                />
-            </div>
-            <div className="flex flex-col mt-8">
-                <label className="text-lg font-semibold text-white">Password:</label>
-                <input
-                    className="w-1/2 p-2 rounded-lg border-red-500 border-2 bg-white"
-                    type="password"
-                    name="password"
-                    value={login.password}
-                    onChange={handleOnChange}
-                />
-            </div>
-            <input className="w-1/2 px-4 py-2 bg-red-500 rounded-lg text-white font-bold mt-8" type="submit" value="Login" />
-        </form>
+        <div className="relative bg-gradient-to-r from-pink-500 to-red-500 h-screen">
+          <br></br>
+        <div className="max-w-sm mx-auto bg-white rounded-lg shadow-lg px-8 pt-6 pb-8 mb-4">
+          <h1 className="text-4xl font-bold text-red-600">Fast Foodies</h1>
+          <p className="text-2xl font-bold">Fast food reviews by you!</p>
+          <div className="flex flex-col mt-8">
+            <label className="text-lg font-semibold text-black">Username:</label>
+            <input
+              className="w-full p-2 rounded-lg border-red-500 border-2 bg-white"
+              type="text"
+              name="name"
+              value={login.name}
+              onChange={handleOnChange}
+            />
+          </div>
+          <div className="flex flex-col mt-8">
+            <label className="text-lg font-semibold text-black">Password:</label>
+            <input
+              className="w-full p-2 rounded-lg border-red-500 border-2 bg-white"
+              type="password"
+              name="password"
+              value={login.password}
+              onChange={handleOnChange}
+            />
+          </div>
+          <input
+            className="w-full px-4 py-2 bg-red-500 rounded-lg text-white font-bold mt-8"
+            type="submit"
+            value="Login"
+            onClick={handleSubmit}
+            onMouseEnter={() => setLogin(login => ({ ...login, hovered: true }))}
+            onMouseLeave={() => setLogin(login => ({ ...login, hovered: false }))}
+            style={{
+              transform: login.hovered ? "scale(1.1)" : "scale(1)",
+              transition: "all .3s ease-in-out"
+            }}
+          />
+        </div>
+      </div>
     );
 };
 

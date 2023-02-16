@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 // import { isHtmlElement } from 'react-router-dom/dist/dom';
 import Restaurant from './Restaurant';
+// import FastFoodies from './img/FastFoodies.png';
 
 const Restaurants = () => {
     const [restaurants, setRestaurants] =useState([])
@@ -18,12 +19,15 @@ const Restaurants = () => {
 
     }, [restaurants.length])
 
+    
+
     const grid = restaurants.map(rest => {
         return (
             <div className='w-full bg-gray-300' style={{width: '100%'}}>
                 <Restaurant 
                 key={rest.attributes.name}
                 attributes = {rest.attributes}
+                id={rest.id}
                 />
             </div>
         )
