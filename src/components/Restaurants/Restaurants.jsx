@@ -23,7 +23,7 @@ const Restaurants = () => {
 
     const grid = restaurants.map(rest => {
         return (
-            <div className='w-full bg-gray-300' style={{width: '100%'}}>
+            <div className='w-full bg-gradient-to-r from-pink-500 to-red-500' style={{width: '100%'}}>
                 <Restaurant 
                 key={rest.attributes.name}
                 attributes = {rest.attributes}
@@ -33,13 +33,14 @@ const Restaurants = () => {
         )
     })
 
+
     return (
         <>
-            <div className="flex flex-col items-center justify-center text-center md:max-w-screen-xl mx-auto p-4 md:py-12 bg-gray-300" style={{height: '200%'}}>
-                <h1 className="text-3xl font-bold">Fast-Foodies</h1>
-                <div className="text-gray-500">Fast food reviews by the people for the people</div>
+            <div className="flex flex-col items-center justify-center text-center md:max-w-screen-xl mx-auto p-4  bg-gradient-to-r from-pink-500 to-red-500 " style={{height: '100%'}}>
+                <h1 className="text-3xl font-bold ">Fast-Foodies</h1>
+                <div className="text-gray-500 ">Fast food reviews by the people for the people</div>
                 <br></br>
-                <div className="grid grid-cols-4 gap-4 w-full bg-gray-300">{grid}</div>
+                <div className="grid grid-cols-4 gap-4 w-full bg-gradient-to-r from-pink-500 to-red-500">{grid}</div>
             </div>
         </>
     );

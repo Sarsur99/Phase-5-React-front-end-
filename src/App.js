@@ -40,7 +40,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App relative bg-gradient-to-r from-pink-500 to-red-500 h-screen">
       <WithNavbar isLoggedIn={isLoggedIn} />
     </div>
   );

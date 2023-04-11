@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 const About = () => {
     return (
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
+      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8 ">
         <div className="rounded-lg bg-white shadow-lg md:flex md:items-center">
           <div className="p-8 md:w-3/5">
             <h2 className="text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3xl sm:leading-9">

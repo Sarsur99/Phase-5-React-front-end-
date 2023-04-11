@@ -35,9 +35,9 @@ const handleSubmit = (e) => {
 // }
 
     return (
-<div className="grid grid-cols-12 gap-4" style={{width: '200%'}}>
+<div className="grid grid-cols-12 gap-4 " style={{width: '300%'}}>
         <div className="col-span-12 sm:col-span-6 xl:col-span-4" style={{width: '100%'}}>
-            <div className="rounded-lg overflow-hidden shadow-lg bg-white transition duration-500 ease-in-out transform hover:scale-105 hover:transition-transform hover:transition-all" style={{width: '100%'}}>
+            <div className="  rounded-lg overflow-hidden shadow-lg bg-gradient-to-br from-white to-white-300 transition duration-500 ease-in-out transform hover:scale-105 hover:transition-transform hover:transition-all" style={{width: '100%'}}>
                 <div className="px-6 py-4" style={{width: '100%'}}>
                     {
                         isEditing
@@ -54,7 +54,7 @@ const handleSubmit = (e) => {
                         :
                         <div>
                             <div className="flex items-center flex-shrink-0 text-black mb-2 text-xl font-semibold" style={{width: '100%'}}>
-                                <img src={props.attributes.image} alt={props.attributes.name} style={{width: '50%'}}/>
+                                <img src={props.attributes.image} alt={props.attributes.name} style={{width: '25%'}}/>
                                 <span className="ml-2">{props.attributes.name}</span>
                             </div>
                             <div className="flex items-center" style={{width: '100%'}}>
