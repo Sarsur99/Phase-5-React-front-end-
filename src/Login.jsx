@@ -52,7 +52,7 @@ const Login = (props) => {
 
 
     return (
-        <div className="relative bg-gradient-to-r from-pink-500 to-red-500 h-screen">
+        <div className="relative bg-gradient-to-r from-pink-500 to-red-600 h-screen">
           <br></br>
         <div className="max-w-sm mx-auto bg-white rounded-lg shadow-lg px-8 pt-6 pb-8 mb-4">
           <h1 className="text-4xl font-bold text-red-600">Fast Foodies</h1>

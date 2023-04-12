@@ -13,26 +13,13 @@ const handleName = (e) => {
 
 const handleImage = (e) => {
     setImage(e.target.value);
-}
+}   
 
 const handleSubmit = (e) => {
     e.preventDefault();
     setIsEditing(false);
     props.editRestaurant(props.attributes.id, name, image);
 }
-
-// const handlePatch = (e) => {
-//     e.preventDefault();
-//     setIsEditing(false);
-//     axios.patch(`http://localhost:3000/api/v1/restaurants/${props.attributes.id}`, {
-//         restaurant: {
-//             name: name,
-//             image: image
-//         }
-//     })
-//     .then(r => setIsEditing(r))
-//     .catch(r => console.log(r))
-// }
 
     return (
 <div className="grid grid-cols-12 gap-4 " style={{width: '300%'}}>
