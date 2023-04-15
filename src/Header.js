@@ -5,6 +5,8 @@ const Header = (props) => {
   const total = props.reviews.length;
 
   return (
+    <>
+    <br></br>
     <div className="flex items-center justify-between bg-white rounded-md opacity-80 ">
     <div className="w-1/2 flex items-center">
       <img src={image} alt={name} className="w-1/3" />
@@ -39,7 +41,7 @@ const Header = (props) => {
       <div className="text-2xl font-bold ml-4 text-gray-100">{total} Reviews</div>
     </div>
   </div>
-  
+  </>
   
   );
 };

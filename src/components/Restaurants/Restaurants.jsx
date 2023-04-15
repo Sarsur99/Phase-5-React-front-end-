@@ -34,7 +34,7 @@ const Restaurants = () => {
     };
   
     const handleDelete = (id) => {
-      axios.delete(`http://localhost:3000/api/v1/restaurants/${id}`)
+      axios.delete(`http://localhost:3000/api/v1/restaurants.json/${id}`)
         .then(response => {
           const updatedRestaurants = restaurants.filter(rest => rest.id !== id);
           setRestaurants(updatedRestaurants);
@@ -69,8 +69,8 @@ const Restaurants = () => {
             <form onSubmit={handleAddRestaurant}>
               <div className='flex flex-col'>
                 <input type='text' name='name' placeholder='Name' required className='mb-2 px-3 py-2 border rounded-md'></input>
-                <input type='text' name='image' placeholder='Image' required className='mb-2 px-3 py-2 border rounded-md'></input>
-                <button type='submit' className='px-3 py-2 bg-blue-500 text-white font-bold rounded-md'>Add Restaurant</button>
+                <input type='text' name='image' placeholder='Image Url' required className='mb-2 px-3 py-2 border rounded-md'></input>
+                <button type='submit' className='px-3 py-2 bg-green-500 text-white font-bold rounded-md'>Add Restaurant</button>
               </div>
             </form>
           </div>
