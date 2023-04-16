@@ -14,6 +14,7 @@ const Restaurant = (props) => {
     setName(e.target.value);
   };
 
+  
   const handleImage = (e) => {
     setImage(e.target.value);
   };

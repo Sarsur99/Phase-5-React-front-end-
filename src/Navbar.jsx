@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import FastFoodies from "./img/FastFoodies.png";
 
 const Navbar = () => {
@@ -54,10 +55,7 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center mr-2 hover:bg-gray-600"
             >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/800px-LinkedIn_logo_initials.png"
-                alt="LinkedIn"
-              />
+              <FaLinkedin color="white" size={20} />
             </a>
             <a
               href="https://github.com/Sarsur99"
@@ -65,10 +63,7 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center mr-2 hover:bg-gray-600"
             >
-              <img
-                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-                alt="GitHub"
-              />
+              <FaGithub color="white" size={20} />
             </a>
           </div>
         </div>
@@ -76,4 +71,5 @@ const Navbar = () => {
     </nav>
   );
 };
+
 export default Navbar;
