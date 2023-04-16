@@ -1,85 +1,57 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGraduationCap, faLaptopCode, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
-    return (
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8 ">
-        <div className="rounded-lg bg-white shadow-lg md:flex md:items-center">
-          <div className="p-8 md:w-3/5">
-            <h2 className="text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3xl sm:leading-9">
-              About Me
-            </h2>
-            <p className="mt-3 max-w-3xl text-base leading-6 text-gray-500">
-              Hi! I'm Soren Sonstein, a full-stack software developer. I specialize
-              in creating web applications using the latest technologies and
-              tools. I'm passionate about learning and developing efficient
-              applications that solve real-world problems!
-            </p>
+  return (
+    <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
+      <h1 className="text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10 mb-12">About Me</h1>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="rounded-lg shadow-lg p-8 text-center">
+          <div className="mx-auto mb-6 w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center">
+            <FontAwesomeIcon icon={faGraduationCap} className="text-4xl text-gray-500" />
           </div>
-          <div className="mt-8 md:mt-0 md:w-2/5 ">
-            <img
-              className="shadow-md rounded-lg h-64"
-              src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-              alt="profile_pic"
-            />
-          </div>
+          <h2 className="text-lg font-bold mb-2">Education</h2>
+          <p className="text-gray-500">I graduated from the Flatiron School, with a specialization in web development. I also have some foundational education in the department of psychology via the University of California, Riverside.</p>
+          <br></br>
+          <img
+          className="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
+          src="data:image/png;base64,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"
+          alt="profile_pic"
+          />
         </div>
-        <div className="mt-8 md:flex md:items-center rounded-lg bg-white shadow-lg md:flex md:items-center">
-          <div className="w-3/5">
-            <h2 className="text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3xl sm:leading-9">
-              Education
-            </h2>
-            <p className="mt-3 max-w-3xl text-base leading-6 text-gray-500">
-              I'm a graduate of the Flatiron School, with a specialization in web development. As well as some foundational education in the department of psychology via the University of California, Riverside.
-            </p>
+
+        <div className="rounded-lg shadow-lg p-8 text-center">
+          <div className="mx-auto mb-6 w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center">
+            <FontAwesomeIcon icon={faLaptopCode} className="text-4xl text-gray-500" />
           </div>
-          <div className="mt-8 md:mt-0 md:w-2/5">
-            <img
-              className="shadow-md rounded-lg h-64"
-              src="https://upload.wikimedia.org/wikipedia/commons/6/61/FS_wiki.png"
-              alt="Flatiron"
-            />
-          </div>
+          <h2 className="text-lg font-bold mb-2">Skills</h2>
+          <p className="text-gray-500">I am a fullstack developer with experience in JavaScript, React.js, Ruby, Ruby on Rails, CSS, HTML, and Tailwind CSS. I'm an amateur photographer with over 7 years of experience, experience collaborating with top producing sales divisions, diversified ability in all client-facing interaction.</p>
+          <br></br>
+          <img
+          className="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
+          src="data:image/png;base64,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"
+          alt="profile_pic"
+          />
         </div>
-        <div className="mt-8 md:flex md:items-center rounded-lg bg-white shadow-lg md:flex md:items-center">
-          <div className="w-3/5">
-            <h2 className="text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3xl sm:leading-9">
-              Skills
-            </h2>
-            <p className="mt-3 max-w-3xl text-base leading-6 text-gray-500">
-              I am a fullstack developer with experience in Javascript, React.js, Ruby, RoR, CSS, HTML, and Tailwind CSS, 
-            </p>
+
+        <div className="rounded-lg shadow-lg p-8 text-center">
+          <div className="mx-auto mb-6 w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center">
+            <FontAwesomeIcon icon={faLightbulb} className="text-4xl text-gray-500" />
           </div>
-          <div className="mt-8 md:mt-0 md:w-2/5">
-            <img
-              className="shadow-md rounded-lg h-64"
-              src="https://miro.medium.com/max/960/1*PFEk9y9K_k5Ql58pC567-A.png"
-              alt="Skills"
-            />
-          </div>
-        </div>
-        <div className="mt-8 md:flex md:items-center rounded-lg bg-white shadow-lg md:flex md:items-center">
-          <div className="w-3/5">
-            <h2 className="text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3xl sm:leading-9">
-              Ambition
-            </h2>
-            <p className="mt-3 max-w-3xl text-base leading-6 text-gray-500">
-              My goal is to become a Dev employed in the industry; and to develop
-              efficient and secure applications for clients. I'm also
-              interested in exploring new technologies and furthering my
-              knowledge in software engineering.
-            </p>
-          </div>
-          <div className="mt-8 md:mt-0 md:w-2/5">
-            <img
-              className="shadow-md rounded-lg h-64"
-              src="https://cdn-employer-wp.arc.dev/wp-content/uploads/2022/04/software-development-costs-1128x635.jpg"
-              alt="Ambition"
-            />
-          </div>
+          <h2 className="text-lg font-bold mb-2">Ambition</h2>
+          <p className="text-gray-500">My goal is to become a software developer employed in the industry and to develop efficient and secure applications for clients. I am also interested in exploring new technologies and furthering my knowledge in software engineering.</p>
+          <div className="mt-12">
+          <img
+          className="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
+          src="https://www.qlsproctor.com.au/wp-content/uploads/2022/07/20220713_Proctor_Having-effective-conversations_The-mood-of-ambition_MAIN-IMAGE_SML.jpg"
+          alt="profile_pic"
+          />
+      </div>
         </div>
       </div>
-    );
+    </div>
+  );
 };
 
 export default About;
