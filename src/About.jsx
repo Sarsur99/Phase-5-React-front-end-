@@ -5,9 +5,9 @@ const About = () => {
   return (
     <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
       <h1 className="text-3xl leading-9 font-extrabold text-gray-900 sm:text-4xl sm:leading-10 mb-12">About Me</h1>
-      
+      <br></br>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="rounded-lg shadow-lg p-8 text-center">
+        <div className="rounded-lg shadow-lg p-8 text-center backdrop-filter backdrop-blur-lg">
           <div className="mx-auto mb-6 w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center">
             <FontAwesomeIcon icon={faGraduationCap} className="text-4xl text-gray-500" />
           </div>

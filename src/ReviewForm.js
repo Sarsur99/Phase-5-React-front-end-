@@ -45,7 +45,6 @@ const ReviewForm = (props) => {
     <button type="submit" class="bg-green-500 text-white font-bold py-3 px-6 rounded-lg mt-6">Submit Review</button>
   </form>
 </div>
-
   );
 };
 

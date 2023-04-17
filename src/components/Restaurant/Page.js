@@ -108,7 +108,8 @@
       {reviews}
     </div>
     <div class="lg:w-1/3">
-      <div class="bg-white p-6 mb-8">
+      <br></br>
+      <div class="bg-white p-6 pr-8 mb-8 rounded">
         <ReviewForm 
           handleChange={handleChange} 
           handleSubmit={handleSubmit}
